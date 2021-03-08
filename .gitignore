@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#KP : Local Files
+/src/App-00.js.txt
+/src/App-01.js.txt
