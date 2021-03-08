@@ -74,7 +74,7 @@ class App extends Component {
               Learn React
             </a>
 
-            <h2>Internal API Call </h2>
+            <h2>MongoDB :  API Call </h2>
             <ul>
               {
                 items.map(item => (
