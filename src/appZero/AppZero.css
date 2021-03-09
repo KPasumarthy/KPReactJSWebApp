@@ -1,14 +1,14 @@
-.App {
+.AppZero {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
+.AppZero-logo {
+  animation: AppZero-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
 
-.App-header {
+.AppZero-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -19,11 +19,11 @@
   color: white;
 }
 
-.App-link {
+.AppZero-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes AppZero-logo-spin {
   from {
     transform: rotate(0deg);
   }

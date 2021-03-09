@@ -1,1 +1,24 @@
-﻿ReactJS : https://www.youtube.com/watch?v=hzLDsxPGctY
+﻿ReactJS : 
+https://www.youtube.com/watch?v=hzLDsxPGctY
+https://www.youtube.com/watch?v=w7ejDZ8SWv8
+https://github.com/jurgen1c/react-task-tracker
+
+ReactJS : Notes
+React 
+props - Pros also called as properties or attributes
+states
+components
+routes
+React hooks are componets that deal with Lifecycle of the Page 
+Frameworks - UI
+Unlike Angular React does not have integrated Routing
+JSX - JavaScript Syntax Extenstions
+
+Components can have "state" which is an object that determines how a component reders and behaves
+
+"App" or "global" state refers to an object that is avaiable to the entire React Ui.=, not just a single component.
+
+ReactJS Hooks : Life-Cycle Hooks
+ useState - Returns a stateful value and a function to update it
+ useEffect - Perform side-effects in function components
+ useContext, useReducer, useRef 

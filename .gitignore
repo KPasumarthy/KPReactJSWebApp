@@ -23,7 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 
 ###KP : Local Files
-/src/App-00.js.txt
-/src/App-01.js.txt
+/src/appZero/App-00.js.txt
+/src/appZero/App-01.js.txt
 /src/app/App-00.js.txt
 /src/app/App-01.js.txt
+.eslintcache
+package-kp.json
+package-lock-kp.json
