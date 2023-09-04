@@ -10,6 +10,7 @@ class AppZero extends Component {
     super(props);
     this.state = {
       items: [],
+      itemsActors: [],
       customers: [],
       isLoaded: false,
     }
@@ -17,15 +18,25 @@ class AppZero extends Component {
 
   componentDidMount() {
 
-    fetch('http://localhost:2727/mongodbnosqlapi/customersAgeSorted')
+    // // // //KP  : MongoDB
+    // fetch('http://localhost:2727/mongodbnosqlapi/customersAgeSorted')
+    //   .then(res => res.json())
+    //   .then(json => {
+    //     this.setState({
+    //       isLoaded: true,
+    //       items: json,
+    //     })
+    //   });
+
+    // // //KP  : Postgres
+    fetch('http://localhost:2345/postgres/api/dvdrental/getFirst10Actors')
       .then(res => res.json())
       .then(json => {
         this.setState({
           isLoaded: true,
-          items: json,
+          itemsActors: json,
         })
       });
-
   }
 
   render() {
@@ -36,31 +47,9 @@ class AppZero extends Component {
 
 
     //KP : Items from API calls
-    var { isLoaded, items } = this.state;
+    var { isLoaded, items, itemsActors } = this.state;
 
-    if (!isLoaded) {
-      return (
-        <div className="container">
-          <header className="header">
-            {element}
-            <img src={logo} className="logo" alt="logo" />
-            <p>
-              Edit <code>src/AppZero.js</code> and save to reload.
-              LOADING ....
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
 
-        </div>
-      );
-    } else {
       return (
         <div className="AppZero">
           <header className="AppZero-header">
@@ -78,7 +67,19 @@ class AppZero extends Component {
               Learn React
             </a>
 
-            <h2>MongoDB :  API Call </h2>
+            <h2>Postgres :  API Call </h2>
+            <ul>
+              {
+                itemsActors.map(item => (
+                  <li key={item.actor_id}>
+                    ID: {item.actor_id} | FirstName: {item.first_name} | LastName: {item.last_name}
+                  </li>
+                ))
+              }
+            </ul>
+
+
+            {/* <h2>MongoDB :  API Call </h2>
             <ul>
               {
                 items.map(item => (
@@ -87,14 +88,14 @@ class AppZero extends Component {
                   </li>
                 ))
               }
-            </ul>
+            </ul> */}
 
           </header>
 
         </div>
       );
 
-    }
+      
   }
 }
 

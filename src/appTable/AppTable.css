@@ -1,14 +1,14 @@
-.AppZero {
+.AppTable {
   text-align: center;
 }
 
-.AppZero-logo {
-  animation: AppZero-logo-spin infinite 20s linear;
+.AppTable-logo {
+  animation: AppTable-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
 
-.AppZero-header {
+.AppTable-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -19,29 +19,15 @@
   color: white;
 }
 
-.AppZero-link {
+.AppTable-link {
   color: #61dafb;
 }
 
-@keyframes AppZero-logo-spin {
+@keyframes AppTable-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
-
-table, th, td {
-  border: 2px solid green;
-  border-collapse: collapse;
-  padding: 5px;
-}
-
-table tr:nth-child(odd) {
-  background-color: #f1f1f1;
-}
-
-table tr:nth-child(even) {
-  background-color: #FFF0F5;
 }

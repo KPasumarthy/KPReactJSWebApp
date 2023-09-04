@@ -1,14 +1,14 @@
-.AppZero {
+.AppForm {
   text-align: center;
 }
 
-.AppZero-logo {
-  animation: AppZero-logo-spin infinite 20s linear;
+.AppForm-logo {
+  animation: AppForm-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
 
-.AppZero-header {
+.AppForm-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -19,11 +19,11 @@
   color: white;
 }
 
-.AppZero-link {
+.AppForm-link {
   color: #61dafb;
 }
 
-@keyframes AppZero-logo-spin {
+@keyframes AppForm-logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -31,6 +31,7 @@
     transform: rotate(360deg);
   }
 }
+
 
 table, th, td {
   border: 2px solid green;

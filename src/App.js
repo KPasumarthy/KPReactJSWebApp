@@ -1,60 +1,28 @@
-import { useState } from 'react';
-import Header from './components/Header';
-import Tasks from './components/Tasks';
-import AddTask from './components/AddTask';
-import AppZero from './appZero/AppZero';
-import Button from './components/Button';
+import React, { useState } from "react";
+import { render } from "react-dom";
+import { AgGridReact } from "ag-grid-react";
+
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-alpine.css";
 
 const App = () => {
-  const [showAppZero, setShowAppZero] = useState(true);
-  const [showAddTask, setShowAddTask, ] = useState(false);
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      name: 'this 1 task',
-    },
-    {
-      id: 2,
-      name: 'this 2 task',
-    },
-    {
-      id: 3,
-      name: 'this 3 task',
-    }
-  ])
+  const [rowData] = useState([
+    { make: "Toyota", model: "Celica", price: 35000 },
+    { make: "Ford", model: "Mondeo", price: 32000 },
+    { make: "Porsche", model: "Boxter", price: 72000 }
+  ]);
 
-  const addTask = (task) => {
-    const id = Math.floor(Math.random() * 10000) + 1;
-    const newTask = { id, ...task }
-    setTasks(...tasks, newTask);
-  }
+  const [columnDefs] = useState([
+    { field: "make" },
+    { field: "model" },
+    { field: "price" }
+  ]);
 
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id))
-  }
-
-  const toggleReminder = (id) => {
-    setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task))
-  }
-
-
-  ////KP : showAppZero = true  : Renders AppZero! showAppZero = false  : Renders Tasks App
-  if (showAppZero) {
-    return (
-      <div>
-        <AppZero />
-      </div>
-    );
-  }
-  else {
-    return (
-      <div className="container">
-        <Header onAdd={() => { setShowAddTask(!showAddTask) }} showAdd={showAddTask} />
-        {showAddTask && <AddTask onAdd={addTask} />}
-        {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />) : ('No tasks to show!')}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
+      <AgGridReact rowData={rowData} columnDefs={columnDefs}></AgGridReact>
+    </div>
+  );
+};
 
 export default App;

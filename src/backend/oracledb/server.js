@@ -139,7 +139,7 @@ async function run() {
     connection = await oracledb.getConnection(
       {
         user: "SYS as SYSDBA",
-        password: "NodeJSORAPassword2020",
+        password: "(kp27SN27kp)",
         privilege: oracledb.SYSDBA,
         connectionString: `(DESCRIPTION=
                                 (ADDRESS=
